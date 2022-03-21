@@ -50,6 +50,7 @@ public class Surface {
   }
   
   public float averageAltitude() {
+    //calculate total/sum
     int counter = 0;
     float sum = 0;
     for (int i = 0; i < terrain.length; i++) {
@@ -59,5 +60,10 @@ public class Surface {
       }
     }
     return sum/counter;    
+  }
+  
+  public float variance(){
+   
+    return 0.0;
   }
 }
