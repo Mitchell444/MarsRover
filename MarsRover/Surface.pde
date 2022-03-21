@@ -38,26 +38,26 @@ public class Surface {
   }
   
   public float lowestPoint() {
-    float highest = -Float.MAX_VALUE;
+    float lowest = Float.MAX_VALUE;
     for (int i = 0; i < terrain.length; i++) {
       for (int j = 0; j < terrain[0].length; j++) {
-        if (terrain[i][j] > highest) { //I found something bigger!
-          highest = terrain[i][j];
+        if (terrain[i][j] < lowest) { //I found something smaller!
+          lowest = terrain[i][j];
         }
       }
     }
-    return highest;    
+    return lowest;    
   }
   
   public float averageAltitude() {
-    float highest = -Float.MAX_VALUE;
+    int counter = 0;
+    float sum = 0;
     for (int i = 0; i < terrain.length; i++) {
       for (int j = 0; j < terrain[0].length; j++) {
-        if (terrain[i][j] > highest) { //I found something bigger!
-          highest = terrain[i][j];
-        }
+        sum = sum + terrain[i][j];
+        counter++;
       }
     }
-    return highest;    
+    return sum/counter;    
   }
 }
